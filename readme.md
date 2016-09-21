@@ -76,4 +76,57 @@ Example:
 Note: Ở 2 trường hợp nếu không có ELSE thì giá trị trả về mặc định là NULL
 
 
+------------------------------------------------------------------------------------
+## Một số cái hay dùng
 
+##ADDTIME
+
+	ADDTIME(expr1,expr2)
+
+	Cộng thời gian của `expr2` vào `expr1`
+
+
+Example:
+
+	mysql> SELECT ADDTIME('2007-12-31 23:59:59.999999', '1 1:1:1.000002');
+        -> '2008-01-02 01:01:01.000001'
+
+	mysql> SELECT ADDTIME('01:00:00.999999', '02:00:00.999998');
+        -> '03:00:01.999997'
+
+
+##GREATEST
+
+	 GREATEST(value1,value2,...)
+
+	 Trả về giá trị lớn nhất.
+
+Example:
+
+	mysql> SELECT GREATEST(2,0);
+        -> 2
+
+	mysql> SELECT GREATEST(34.0,3.0,5.0,767.0);
+	        -> 767.0
+
+	mysql> SELECT GREATEST('B','A','C');
+	        -> 'C'	 
+
+
+##LEAST
+
+	LEAST(value1,value2,...)
+
+	Trả về giá trị nhỏ nhất
+
+
+Example:
+
+	mysql> SELECT LEAST(2,0);
+        -> 0
+
+	mysql> SELECT LEAST(34.0,3.0,5.0,767.0);
+	        -> 3.0
+	        
+	mysql> SELECT LEAST('B','A','C');
+	        -> 'A'
